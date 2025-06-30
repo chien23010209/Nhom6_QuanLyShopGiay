@@ -111,6 +111,6 @@ ShopGiay/
 
 - **Nhóm 6**
 - **Thành viên**:
--Tạ Công Chiến	23010209
-  Phạm Bá Hiếu 	23010216
--Nguyễn Hữu Nghĩa 	21012081
+-**Tạ Công Chiến	23010209**
+-**Phạm Bá Hiếu 	23010216**
+-**Nguyễn Hữu Nghĩa 	21012081**
