@@ -1,6 +1,6 @@
 # 🥿 QUẢN LÝ SHOP GIÀY – JAVA SWING + XML
 
-## 📝 GIỚI THIdhád
+## 📝 GIỚI THIỆU
 
 Phần mềm **Quản lý shop giày** được xây dựng bằng **Java SE** sử dụng **giao diện Swing** và **lưu trữ dữ liệu bằng file XML**, không sử dụng hệ quản trị cơ sở dữ liệu (MySQL, SQLite...).
 
