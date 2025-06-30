@@ -1,4 +1,4 @@
-# 🥿 PHẦN MỀM QUẢN LÝ SHOP GIÀY – JAVA SWING + XML
+# 🥿 QUẢN LÝ SHOP GIÀY – JAVA SWING + XML
 
 ## 📝 GIỚI THIỆU
 
@@ -13,7 +13,7 @@ Phần mềm hỗ trợ quản lý sản phẩm, khách hàng, đơn hàng và �
 - **Ngôn ngữ**: Java SE 23
 - **Công cụ IDE**: Apache NetBeans 23
 - **Hệ điều hành**: Windows / Linux / macOS
-- **Thư viện**: Java Core (không dùng thư viện ngoài)
+- **Thư viện**: Java Core 
 
 ---
 
@@ -66,7 +66,7 @@ Hệ thống yêu cầu đăng nhập trước khi sử dụng. Dưới đây l�
 3. **Lưu ý**:
    - Lần đầu chạy, các file `.xml` sẽ được tạo tự động nếu chưa có
 
----
+
 
 ## 📂 CẤU TRÚC THƯ MỤC DỰ ÁN
 
@@ -94,6 +94,6 @@ Edit
 
 - **Nhóm 4 – Lớp CNTT2**
 - **Thành viên**:
-  - Nguyễn Văn A – MSSV: 12345678
-  - Trần Thị B – MSSV: 23456789
-  - Lê Văn C – MSSV: 34567890
+Tạ Công Chiến	23010209
+Phạm Bá Hiếu 	23010216
+Nguyễn Hữu Nghĩa 	21012081
