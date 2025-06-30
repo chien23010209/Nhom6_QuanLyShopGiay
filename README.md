@@ -84,6 +84,8 @@ Giao diện đơn giản, thân thiện giúp nhân viên và quản lý dễ d�
 ---
 
 
+
+
 ## 📂 5. Cấu trúc thư mục dự án
 
 ShopGiay/
@@ -101,7 +103,7 @@ ShopGiay/
 │
 ├── images/ # Thư mục chứa hình ảnh sản phẩm
 │
-└── README.md # File hướng dẫn sử dụng 
+└── README.md # File hướng dẫn sử dụng
 
 
 
