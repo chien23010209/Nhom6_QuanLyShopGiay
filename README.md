@@ -84,9 +84,6 @@ ShopGiay_XML/
 ├── README.md
 └── BaoCao_BaiTapLon.pdf
 
-yaml
-Copy
-Edit
 
 ---
 
