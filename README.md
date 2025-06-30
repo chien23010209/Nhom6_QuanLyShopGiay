@@ -1,91 +1,85 @@
-# 🥿 QUẢN LÝ SHOP GIÀY – JAVA SWING + XML
+🥿👟 Quản Lý Shop Giày - README
+🧾 MÔ TẢ PHẦN MỀM
+Phần mềm Quản lý Shop Giày là một ứng dụng quản lý bán hàng cho cửa hàng giày dép, giúp nhân viên và chủ cửa hàng quản lý hiệu quả các hoạt động như: nhập hàng, bán hàng, thống kê doanh thu, tìm kiếm sản phẩm theo mã hoặc tên, và hiển thị thông tin kèm hình ảnh sản phẩm.
 
-## 📝 GIỚI THIỆU
+Phần mềm được phát triển bằng ngôn ngữ Java trên công cụ NetBeans IDE, sử dụng XML làm cơ sở dữ liệu.
 
-Phần mềm **Quản lý shop giày** được xây dựng bằng **Java SE** sử dụng **giao diện Swing** và **lưu trữ dữ liệu bằng file XML**, không sử dụng hệ quản trị cơ sở dữ liệu (MySQL, SQLite...).
+⚙️ CHỨC NĂNG CHÍNH
+Đăng nhập hệ thống
 
-Phần mềm hỗ trợ quản lý sản phẩm, khách hàng, đơn hàng và đăng nhập nhân viên với phân quyền. Đây là ứng dụng dạng desktop phù hợp cho mục đích học tập và mô phỏng quản lý bán hàng.
+Xác thực người dùng thông qua tài khoản đã được lưu trong file XML.
 
----
+Sau khi đăng nhập thành công, người dùng có thể sử dụng các chức năng của hệ thống.
 
-## ⚙️ CẤU HÌNH PHÁT TRIỂN
+Nhập hàng
 
-- **Ngôn ngữ**: Java SE 23
-- **Công cụ IDE**: Apache NetBeans 23
-- **Hệ điều hành**: Windows / Linux / macOS
-- **Thư viện**: Java Core 
+Nhập thông tin giày dép mới: mã sản phẩm, tên, size, màu sắc, giá nhập, số lượng, đường dẫn hình ảnh,...
 
----
+Dữ liệu được lưu vào file XML.
 
-## 🔐 THÔNG TIN ĐĂNG NHẬP
+Bán hàng
 
-Hệ thống yêu cầu đăng nhập trước khi sử dụng. Dưới đây là các tài khoản có sẵn:
+Ghi nhận giao dịch bán hàng: chọn sản phẩm, số lượng bán, tính tổng tiền.
 
-| Tên đăng nhập | Mật khẩu   | Quyền truy cập   |
-|---------------|------------|------------------|
-| `admin`       | `admin123` | Quản trị viên    |
-| `nhanvien1`   | `123456`   | Nhân viên bán hàng |
+Cập nhật tồn kho trong XML sau khi bán.
 
-> 📁 Dữ liệu tài khoản lưu tại: `data/nhanvien.xml`
+Thống kê
 
----
+Thống kê số lượng sản phẩm đã bán, tồn kho, tổng doanh thu theo ngày, tuần hoặc tháng.
 
-## 📋 CHỨC NĂNG CHÍNH
+Tìm kiếm sản phẩm
 
-### 1. Đăng nhập hệ thống
-- Giao diện đăng nhập đơn giản
-- Phân quyền: admin và nhân viên
+Tìm kiếm theo mã sản phẩm, tên giày hoặc size.
 
-### 2. Quản lý sản phẩm
-- Thêm, sửa, xoá sản phẩm
-- Lưu tại `data/sanpham.xml`
+Kết quả tìm kiếm hiển thị thông tin chi tiết cùng hình ảnh sản phẩm.
 
-### 3. Quản lý khách hàng
-- Thêm khách hàng mới
-- Lưu tại `data/khachhang.xml`
+🔐 THÔNG TIN TÀI KHOẢN ĐĂNG NHẬP MẶC ĐỊNH
+plaintext
+Copy
+Edit
+Tài khoản: admin
+Mật khẩu : 123456
+Thông tin tài khoản được lưu trong file XML: users.xml
 
-### 4. Quản lý đơn hàng
-- Tạo đơn hàng, tính tổng tiền
-- Lưu tại `data/donhang.xml`
+▶️ HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH
+Bước 1: Môi trường cần thiết
+Cài đặt NetBeans IDE (khuyến nghị phiên bản 12 trở lên).
 
-### 5. Quản lý nhân viên (chỉ admin)
-- Thêm, sửa, xoá tài khoản
-- Lưu tại `data/nhanvien.xml`
+Java Development Kit (JDK) 8 trở lên.
 
----
+Đảm bảo file XML (ví dụ: products.xml, users.xml, sales.xml) đã được tạo đúng định dạng.
 
-## 🚀 HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH
+Bước 2: Mở project
+Mở NetBeans.
 
-1. **Mở dự án bằng NetBeans 23**:
-   - Vào `File` → `Open Project` → chọn thư mục `ShopGiay_XML`
+Chọn File > Open Project và chọn thư mục chứa mã nguồn bài tập lớn.
 
-2. **Chạy chương trình**:
-   - Nhấn chuột phải vào `Main.java` → Chọn `Run File`
-   - Hoặc nhấn `Shift + F6`
+Bước 3: Chạy chương trình
+Click chuột phải vào project và chọn Run hoặc nhấn F6.
 
-3. **Lưu ý**:
-   - Lần đầu chạy, các file `.xml` sẽ được tạo tự động nếu chưa có
+Giao diện đăng nhập hiện ra → nhập thông tin tài khoản để đăng nhập.
 
+Sau khi đăng nhập thành công, sử dụng các chức năng qua giao diện chính.
 
-
-## 📂 CẤU TRÚC THƯ MỤC DỰ ÁN
-
-ShopGiay_XML/
+📂 CẤU TRÚC THƯ MỤC DỰ ÁN
+plaintext
+Copy
+Edit
+ShopGiay/
+│
 ├── src/
-│ ├── model/ # Lớp đối tượng: SanPham, DonHang, ...
-│ ├── data/ # Đọc/ghi XML: XMLReader.java, XMLWriter.java
-│ ├── ui/ # Giao diện người dùng (Swing)
-│ └── Main.java # Điểm khởi chạy chương trình
+│   ├── gui/                # Giao diện người dùng
+│   ├── model/              # Lớp xử lý dữ liệu XML
+│   ├── utils/              # Tiện ích xử lý XML
+│   └── Main.java           # Điểm khởi chạy chính
+│
 ├── data/
-│ ├── sanpham.xml
-│ ├── khachhang.xml
-│ ├── donhang.xml
-│ └── nhanvien.xml
-├── README.md
-└── BaoCao_BaiTapLon.pdf
+│   ├── products.xml        # Lưu thông tin sản phẩm
+│   ├── users.xml           # Lưu tài khoản người dùng
+│   └── sales.xml           # Lưu thông tin giao dịch bán hàng
+│
+└── README.md               # File hướng dẫn
 
-
----
 
 ## 👨‍💻 NHÓM THỰC HIỆN
 
