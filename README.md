@@ -89,21 +89,21 @@ Giao diện đơn giản, thân thiện giúp nhân viên và quản lý dễ d�
 ## 📂 5. Cấu trúc thư mục dự án
 
 ShopGiay/
-│
-├── src/
-│ ├── gui/ # Các lớp giao diện người dùng
-│ ├── model/ # Lớp xử lý dữ liệu và thao tác với XML
-│ ├── utils/ # Các tiện ích hỗ trợ (đọc, ghi XML, xử lý ảnh)
-│ └── Main.java # Lớp chính khởi chạy chương trình
-│
-├── data/
-│ ├── products.xml # Lưu trữ thông tin sản phẩm giày dép
-│ ├── users.xml # Lưu trữ tài khoản đăng nhập
-│ └── sales.xml # Lưu trữ lịch sử bán hàng
-│
-├── images/ # Thư mục chứa hình ảnh sản phẩm
-│
-└── README.md # File hướng dẫn sử dụng
+|
++-- src/
+| +-- gui/ # Các lớp giao diện người dùng
+| +-- model/ # Lớp xử lý dữ liệu và thao tác với XML
+| +-- utils/ # Các tiện ích hỗ trợ (đọc, ghi XML, xử lý ảnh)
+| +-- Main.java # Lớp chính khởi chạy chương trình
+|
++-- data/
+| +-- products.xml # Lưu trữ thông tin sản phẩm giày dép
+| +-- users.xml # Lưu trữ tài khoản đăng nhập
+| +-- sales.xml # Lưu trữ lịch sử bán hàng
+|
++-- images/ # Thư mục chứa hình ảnh sản phẩm
+|
++-- README.md # File hướng dẫn sử dụng
 
 
 
