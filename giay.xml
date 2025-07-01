@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shoes>
+    <shoe id="1001">
+        <name>Nike Air Max</name>
+        <type>Thể thao</type>
+        <price>2500000</price>
+        <image>images/shoe1.jpg</image>
+    </shoe>
+</shoes>
