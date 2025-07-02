@@ -11,7 +11,7 @@ import com.mycompany.quanlyshopgiay.entity.Residents;
 import com.mycompany.quanlyshopgiay.view.LoginView;
 import com.mycompany.quanlyshopgiay.view.MainView;
 import com.mycompany.quanlyshopgiay.view.ManagerView;
-import com.mycompany.quanlyshopgiay.view.ResidentView;
+import com.mycompany.quanlyshopgiay.view.CustomerView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -30,11 +30,11 @@ public class ResidentController
 {
     private LoginView loginView;
     private ManagerView managerView;
-    private ResidentView residentView;
+    private CustomerView residentView;
     private MainView mainView;
     private ManagerResidents managerResidents;
     
-    public ResidentController(ResidentView view)
+    public ResidentController(CustomerView view)
     {
         this.residentView=view;
         this.managerResidents = new ManagerResidents();

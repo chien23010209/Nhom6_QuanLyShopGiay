@@ -36,22 +36,22 @@ import javax.swing.table.TableColumnModel;
  *
  * @author PC
  */
-public class ResidentView extends javax.swing.JFrame {
+public class CustomerView extends javax.swing.JFrame {
 
     /**
      * Creates new form ResidentView
      */
     private String [] columnNames = new String [] {
-        "STT", "Số hộ khẩu", "Địa chỉ", "Vai trò", "Họ và tên", "Ngày sinh", "Liên hệ"};
+        "STT", "Mã khách hàng", "Họ và tên ", "Giới tính ", "Hạng thành viên ", "địa chỉ ", "số điện thoại "};
     private SimpleDateFormat fDate=new SimpleDateFormat("dd/MM/yyyy");
     FlowLayout flowLayout = new FlowLayout();
-    public ResidentView() {
+    public CustomerView() {
         initComponents();
         btnAdd.setEnabled(true);
         btnEdit.setEnabled(false);
         btnDelete.setEnabled(false);
         btnSearch.setEnabled(true);
-        tableResident.setDefaultRenderer(Object.class, new ResidentView.MyRenderer());
+        tableResident.setDefaultRenderer(Object.class, new CustomerView.MyRenderer());
     }
     
     private static Image getCircleImage(Image image) {
@@ -192,11 +192,9 @@ public class ResidentView extends javax.swing.JFrame {
         FieldSumFamily = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         FieldSum = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
         CheckBoxSortID = new javax.swing.JCheckBox();
         CheckBoxSortName = new javax.swing.JCheckBox();
         CheckBoxSortIDFamily = new javax.swing.JCheckBox();
-        FieldSumDD = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableResident = new javax.swing.JTable();
         FieldCMT = new javax.swing.JTextField();
@@ -225,7 +223,6 @@ public class ResidentView extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
 
         SearchDialog.setResizable(false);
         SearchDialog.setSize(new java.awt.Dimension(511, 390));
@@ -435,13 +432,13 @@ public class ResidentView extends javax.swing.JFrame {
         jLabel14.setOpaque(false);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel3.setText("Số người có CCCD:");
+        jLabel3.setText("Khách hàng VIP:");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel12.setText("Tổng số hộ dân:");
+        jLabel12.setText("Tổng số đơn hàng:");
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel13.setText("Số người có CMND:");
+        jLabel13.setText("Khách hàng tiềm năng:");
 
         FieldSumFamily.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         FieldSumFamily.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -453,7 +450,7 @@ public class ResidentView extends javax.swing.JFrame {
         });
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel17.setText("Tổng dân số:");
+        jLabel17.setText("Tổng số khách hàng :");
 
         FieldSum.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         FieldSum.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(0, 51, 102)));
@@ -462,9 +459,6 @@ public class ResidentView extends javax.swing.JFrame {
                 FieldSumActionPerformed(evt);
             }
         });
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel15.setText("Số người có định danh:");
 
         CheckBoxSortID.setBackground(new java.awt.Color(0, 102, 204, 175));
         btnGroupSort.add(CheckBoxSortID);
@@ -481,18 +475,9 @@ public class ResidentView extends javax.swing.JFrame {
 
         btnGroupSort.add(CheckBoxSortIDFamily);
         CheckBoxSortIDFamily.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        CheckBoxSortIDFamily.setText("Sắp xếp theo số hộ khẩu");
+        CheckBoxSortIDFamily.setText("Sắp xếp theo mã khách hàng");
         CheckBoxSortIDFamily.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CheckBoxSortIDFamily.setOpaque(false);
-
-        FieldSumDD.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        FieldSumDD.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        FieldSumDD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(0, 51, 102)));
-        FieldSumDD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FieldSumDDActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -519,11 +504,7 @@ public class ResidentView extends javax.swing.JFrame {
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FieldSumDD, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -581,11 +562,7 @@ public class ResidentView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FieldSumCMND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FieldSumDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(btnResidentUndo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -598,8 +575,6 @@ public class ResidentView extends javax.swing.JFrame {
         FieldSumFamily.setEditable(false);
         FieldSum.setOpaque(false);
         FieldSum.setEditable(false);
-        FieldSumDD.setOpaque(false);
-        FieldSumDD.setEditable(false);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 230, 780);
@@ -661,9 +636,9 @@ public class ResidentView extends javax.swing.JFrame {
         ComboBoxRole.setOpaque(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Vai trò:");
+        jLabel1.setText("Hạng khách hàng");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(900, 100, 70, 40);
+        jLabel1.setBounds(810, 100, 160, 40);
 
         FieldIDFamily.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         FieldIDFamily.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 51, 102)));
@@ -700,7 +675,7 @@ public class ResidentView extends javax.swing.JFrame {
         jScrollPane2.setOpaque(false);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel4.setText("Nơi sinh:");
+        jLabel4.setText("email");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(610, 310, 80, 40);
 
@@ -795,7 +770,7 @@ public class ResidentView extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("<html>Quản lý dân cư huyện X<br> ");
+        jLabel10.setText("<html>Quan Lý Khách Hàng<br> ");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(580, 10, 390, 80);
 
@@ -861,14 +836,9 @@ public class ResidentView extends javax.swing.JFrame {
         btnClear.setBounds(1070, 370, 170, 44);
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel11.setText("Số hộ khẩu:");
+        jLabel11.setText("Mã khách hàng");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(290, 100, 100, 40);
-
-        jLabel9.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/Lovepik_com-500330964-blue-blazed-background.jpg"));
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(-30, 0, 1640, 890);
+        jLabel11.setBounds(250, 100, 130, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -964,10 +934,6 @@ public class ResidentView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldSumCMNDActionPerformed
 
-    private void FieldSumDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldSumDDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldSumDDActionPerformed
-
     private void CheckBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxNameActionPerformed
@@ -997,20 +963,21 @@ public class ResidentView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ResidentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ResidentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ResidentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ResidentView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ResidentView().setVisible(true);
+                new CustomerView().setVisible(true);
             }
         });
     }
@@ -1480,7 +1447,6 @@ public class ResidentView extends javax.swing.JFrame {
     private javax.swing.JTextField FieldSum;
     private javax.swing.JTextField FieldSumCCCD;
     private javax.swing.JTextField FieldSumCMND;
-    private javax.swing.JTextField FieldSumDD;
     private javax.swing.JTextField FieldSumFamily;
     private javax.swing.JDialog SearchDialog;
     private javax.swing.JTextArea TextAreaAddress;
@@ -1503,7 +1469,6 @@ public class ResidentView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1518,7 +1483,6 @@ public class ResidentView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

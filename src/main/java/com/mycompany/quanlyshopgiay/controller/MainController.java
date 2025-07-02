@@ -9,7 +9,7 @@ import com.mycompany.quanlyshopgiay.entity.SpecialPerson;
 import com.mycompany.quanlyshopgiay.view.LoginView;
 import com.mycompany.quanlyshopgiay.view.MainView;
 import com.mycompany.quanlyshopgiay.view.ManagerView;
-import com.mycompany.quanlyshopgiay.view.ResidentView;
+import com.mycompany.quanlyshopgiay.view.CustomerView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -22,7 +22,7 @@ public class MainController
 {
     private LoginView loginView;
     private ManagerView managerView;
-    private ResidentView residentView;
+    private CustomerView residentView;
     private MainView mainView;
     
     public MainController(MainView view)
@@ -50,7 +50,7 @@ public class MainController
     {
         public void actionPerformed(ActionEvent e) 
         {
-            residentView = new ResidentView();
+            residentView = new CustomerView();
             ResidentController residentController = new ResidentController(residentView);
             residentController.showManagerView();
             mainView.setVisible(false);
