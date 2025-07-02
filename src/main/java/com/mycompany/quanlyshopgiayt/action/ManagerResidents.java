@@ -7,7 +7,7 @@ package com.mycompany.quanlyshopgiayt.action;
 import com.mycompany.quanlyshopgiay.entity.ResidentXML;
 import com.mycompany.quanlyshopgiay.entity.Residents;
 import com.mycompany.quanlyshopgiay.utils.FileUtils;
-import com.mycompany.quanlyshopgiay.view.ResidentView;
+import com.mycompany.quanlyshopgiay.view.CustomerView;
 import java.text.Collator;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,7 +26,7 @@ public class ManagerResidents
 {
     private static final String RESIDENT_FILE_NAME = "Residents.xml";
     private List<Residents> listResidents;
-    private ResidentView residentView;
+    private CustomerView residentView;
     
     public ManagerResidents()
     {
