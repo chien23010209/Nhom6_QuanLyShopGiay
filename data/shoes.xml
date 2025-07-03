@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DanhSachGiay>
+  <Giay>
+    <MaGiay>G001</MaGiay>
+    <TenGiay>Nike Air Force 1</TenGiay>
+    <Hang>Nike</Hang>
+    <Size>40</Size>
+    <MauSac>Trắng</MauSac>
+    <Gia>2500000</Gia>
+    <NgayNhap>2025-07-01</NgayNhap>
+    <SoLuongTon>132</SoLuongTon>
+    <HinhAnh>images/R.jfif</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G002</MaGiay>
+    <TenGiay>Adidas Stan Smith</TenGiay>
+    <Hang>Adidas</Hang>
+    <Size>41</Size>
+    <MauSac>Trắng/Xanh</MauSac>
+    <Gia>1900000</Gia>
+    <NgayNhap>2025-07-02</NgayNhap>
+    <SoLuongTon>50</SoLuongTon>
+    <HinhAnh>images/giaydidas.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G003</MaGiay>
+    <TenGiay>gucci rython</TenGiay>
+    <Hang>gucci</Hang>
+    <Size>39</Size>
+    <MauSac>Vàng</MauSac>
+    <Gia>29000000</Gia>
+    <NgayNhap>2025-07-03</NgayNhap>
+    <SoLuongTon>150</SoLuongTon>
+    <HinhAnh>images/giayguccci.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G004</MaGiay>
+    <TenGiay>Adidas Hồng</TenGiay>
+    <Hang>Adidas</Hang>
+    <Size>40</Size>
+    <MauSac>hồng/đen</MauSac>
+    <Gia>1000000</Gia>
+    <NgayNhap>2025-02-02</NgayNhap>
+    <SoLuongTon>500</SoLuongTon>
+    <HinhAnh>images/adidas.webp</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G005</MaGiay>
+    <TenGiay>Giày tây </TenGiay>
+    <Hang>Reman</Hang>
+    <Size>43</Size>
+    <MauSac>Nâu</MauSac>
+    <Gia>19000000</Gia>
+    <NgayNhap>2025-07-05</NgayNhap>
+    <SoLuongTon>80</SoLuongTon>
+    <HinhAnh>images/giayda.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G006</MaGiay>
+    <TenGiay>Nike AF1</TenGiay>
+    <Hang>Nike</Hang>
+    <Size>39</Size>
+    <MauSac>Hồng /xanh</MauSac>
+    <Gia>10900000</Gia>
+    <NgayNhap>2024-07-02</NgayNhap>
+    <SoLuongTon>60</SoLuongTon>
+    <HinhAnh>images/nikenu.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G007</MaGiay>
+    <TenGiay>Gucci nam</TenGiay>
+    <Hang>Gucci</Hang>
+    <Size>41</Size>
+    <MauSac>Trắng</MauSac>
+    <Gia>29000000</Gia>
+    <NgayNhap>2025-07-02</NgayNhap>
+    <SoLuongTon>30</SoLuongTon>
+    <HinhAnh>images/Giay-Gucci-nam.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G008</MaGiay>
+    <TenGiay>Guccist</TenGiay>
+    <Hang>Gucci</Hang>
+    <Size>41</Size>
+    <MauSac>Nâu</MauSac>
+    <Gia>19000000</Gia>
+    <NgayNhap>2025-04-02</NgayNhap>
+    <SoLuongTon>50</SoLuongTon>
+    <HinhAnh>images/guccist.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G009</MaGiay>
+    <TenGiay>Gucci da</TenGiay>
+    <Hang>Gucci</Hang>
+    <Size>41</Size>
+    <MauSac>Nâu</MauSac>
+    <Gia>40000000</Gia>
+    <NgayNhap>2024-09-02</NgayNhap>
+    <SoLuongTon>50</SoLuongTon>
+    <HinhAnh>images/guccida.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G010</MaGiay>
+    <TenGiay>Giày thể thao </TenGiay>
+    <Hang>Din cox</Hang>
+    <Size>42</Size>
+    <MauSac>Trắng</MauSac>
+    <Gia>900000</Gia>
+    <NgayNhap>2025-01-24</NgayNhap>
+    <SoLuongTon>150</SoLuongTon>
+    <HinhAnh>images/giaythethao.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G011</MaGiay>
+    <TenGiay>Sport and CO</TenGiay>
+    <Hang>Fila</Hang>
+    <Size>39</Size>
+    <MauSac>Trắng</MauSac>
+    <Gia>950000</Gia>
+    <NgayNhap>2025-07-12</NgayNhap>
+    <SoLuongTon>90</SoLuongTon>
+    <HinhAnh>images/fila.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G012</MaGiay>
+    <TenGiay>Nike Joden</TenGiay>
+    <Hang>Nike</Hang>
+    <Size>41</Size>
+    <MauSac>Trắng/Đen</MauSac>
+    <Gia>1902000</Gia>
+    <NgayNhap>2024-10-22</NgayNhap>
+    <SoLuongTon>70</SoLuongTon>
+    <HinhAnh>images/joden.jpg</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G013</MaGiay>
+    <TenGiay>Adidas Stan </TenGiay>
+    <Hang>Adidas</Hang>
+    <Size>38</Size>
+    <MauSac>Trắng</MauSac>
+    <Gia>110000</Gia>
+    <NgayNhap>2025-03-02</NgayNhap>
+    <SoLuongTon>56</SoLuongTon>
+    <HinhAnh>images/fly.jfif</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G014</MaGiay>
+    <TenGiay>Nike AIR</TenGiay>
+    <Hang>Nike</Hang>
+    <Size>40</Size>
+    <MauSac>Vàng</MauSac>
+    <Gia>9400000</Gia>
+    <NgayNhap>2025-01-02</NgayNhap>
+    <SoLuongTon>130</SoLuongTon>
+    <HinhAnh>images/OIP.webp</HinhAnh>
+  </Giay>
+  <Giay>
+    <MaGiay>G015</MaGiay>
+    <TenGiay>gucci đỏ</TenGiay>
+    <Hang>Gucci</Hang>
+    <Size>42</Size>
+    <MauSac>đỏ</MauSac>
+    <Gia>19000000</Gia>
+    <NgayNhap>2025-06-02</NgayNhap>
+    <SoLuongTon>60</SoLuongTon>
+    <HinhAnh>images/guccido.jpg</HinhAnh>
+  </Giay>
+</DanhSachGiay>
