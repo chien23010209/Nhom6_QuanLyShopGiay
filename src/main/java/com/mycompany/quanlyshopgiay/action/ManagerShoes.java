@@ -1,4 +1,4 @@
-package com.mycompany.quanlyshopgiayt.action;
+package com.mycompany.quanlyshopgiay.action;
 
 import com.mycompany.quanlyshopgiay.entity.Giay;
 import com.mycompany.quanlyshopgiay.entity.GiayXML;
@@ -14,15 +14,17 @@ public class ManagerShoes {
     private static final String FILE_NAME = "dataShoes.xml";
     private List<Giay> listGiay;
 
-    public ManagerGiay() {
-        listGiay = readListGiay();
-        if (listGiay == null) listGiay = new ArrayList<>();
+    public ManagerShoes() {
+        listGiay = (List<Giay>) readListGiay();
+        if (listGiay == null) {
+            listGiay = new ArrayList<>();
+        }
     }
 
     // Đọc danh sách giày từ file XML
-    public List<Giay> readListGiay() {
+    public Object readListGiay() {
         GiayXML wrapper = (GiayXML) FileUtils.readXMLFile(FILE_NAME, GiayXML.class);
-        return (wrapper != null) ? wrapper.getGiayList() : new ArrayList<>();
+        return (wrapper != null && wrapper.getGiayList() != null) ? wrapper.getGiayList() : new ArrayList<>();
     }
 
     // Ghi danh sách giày vào file XML
@@ -36,8 +38,12 @@ public class ManagerShoes {
     private String generateNextID() {
         int max = 0;
         for (Giay g : listGiay) {
-            String number = g.getMaGiay().replace("G", "");
-            max = Math.max(max, Integer.parseInt(number));
+            try {
+                String number = g.getMaGiay().replaceAll("[^0-9]", "");
+                max = Math.max(max, Integer.parseInt(number));
+            } catch (NumberFormatException e) {
+                // Bỏ qua nếu mã giày sai định dạng
+            }
         }
         return String.format("G%03d", max + 1);
     }
@@ -63,12 +69,24 @@ public class ManagerShoes {
     // Xóa giày khỏi danh sách
     public boolean delete(Giay g) {
         boolean removed = listGiay.removeIf(item -> item.getMaGiay().equals(g.getMaGiay()));
-        if (removed) writeListGiay(listGiay);
+        if (removed) {
+            writeListGiay(listGiay);
+        }
         return removed;
     }
 
     // Lấy toàn bộ danh sách giày
     public List<Giay> getListGiay() {
         return listGiay;
+    }
+
+    // Tìm giày theo mã
+    public Giay findByID(String maGiay) {
+        for (Giay g : listGiay) {
+            if (g.getMaGiay().equals(maGiay)) {
+                return g;
+            }
+        }
+        return null;
     }
 }

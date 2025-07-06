@@ -25,4 +25,12 @@ public class GiayXML {
     public void setDanhSachGiay(List<Giay> danhSachGiay) {
         this.danhSachGiay = danhSachGiay;
     }
+
+    public Object getGiayList() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setGiayList(List<Giay> list) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

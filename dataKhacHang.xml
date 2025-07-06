@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DanhSachKhachHang>
+  <KhachHang>
+    <MaKH>KH001</MaKH>
+    <TenKH>Nguyễn Văn Siu</TenKH>
+    <SDT>0355556666</SDT>
+    <DiaChi>Hà Nội</DiaChi>
+    <DanhSachMuaHang>
+      <HoaDon>
+        <MaHD>HD001</MaHD>
+        <MaGiay>G001</MaGiay>
+        <NgayMua>2025-07-03</NgayMua>
+        <SoLuong>2</SoLuong>
+        <TongTien>5000000</TongTien>
+      </HoaDon>
+    </DanhSachMuaHang>
+  </KhachHang>
+  <KhachHang>
+    <MaKH>KH002</MaKH>
+    <TenKH>Trần Thị Hoan</TenKH>
+    <SDT>0988889999</SDT>
+    <DiaChi>TP.HCM</DiaChi>
+    <DanhSachMuaHang>
+      <HoaDon>
+        <MaHD>HD002</MaHD>
+        <MaGiay>G002</MaGiay>
+        <NgayMua>2025-07-03</NgayMua>
+        <SoLuong>1</SoLuong>
+        <TongTien>1900000</TongTien>
+      </HoaDon>
+    </DanhSachMuaHang>
+  </KhachHang>
+  <KhachHang>
+    <MaKH>KH003</MaKH>
+    <TenKH>Lê Văn Dân</TenKH>
+    <SDT>0911223344</SDT>
+    <DiaChi>Đà Nẵng</DiaChi>
+    <DanhSachMuaHang>
+      <HoaDon>
+        <MaHD>HD003</MaHD>
+        <MaGiay>G005</MaGiay>
+        <NgayMua>2025-07-24</NgayMua>
+        <SoLuong>3</SoLuong>
+        <TongTien>57000000</TongTien>
+      </HoaDon>
+    </DanhSachMuaHang>
+  </KhachHang>
+  <KhachHang>
+    <MaKH>KH004</MaKH>
+    <TenKH>Lê Khắc Chân</TenKH>
+    <SDT>0916437328</SDT>
+    <DiaChi>Lạng Sơn</DiaChi>
+    <DanhSachMuaHang>
+      <HoaDon>
+        <MaHD>HD004</MaHD>
+        <MaGiay>G012</MaGiay>
+        <NgayMua>2025-08-25</NgayMua>
+        <SoLuong>4</SoLuong>
+        <TongTien>7608000</TongTien>
+      </HoaDon>
+    </DanhSachMuaHang>
+  </KhachHang>
+  <KhachHang>
+    <MaKH>KH005</MaKH>
+    <TenKH>Tạ Khánh Chi</TenKH>
+    <SDT>0911342233</SDT>
+    <DiaChi>Hưng Yên</DiaChi>
+    <DanhSachMuaHang>
+      <HoaDon>
+        <MaHD>HD005</MaHD>
+        <MaGiay>G015</MaGiay>
+        <NgayMua>2025-07-15</NgayMua>
+        <SoLuong>2</SoLuong>
+        <TongTien>38000000</TongTien>
+      </HoaDon>
+    </DanhSachMuaHang>
+  </KhachHang>
+</DanhSachKhachHang>
