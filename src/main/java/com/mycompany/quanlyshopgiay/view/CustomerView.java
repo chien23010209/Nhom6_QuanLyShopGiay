@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.quanlyshopgiay.view;
-import com.mycompany.quanlyshopgiay.entity.Residents;
+import com.mycompany.quanlyshopgiay.entity.KhachHang;
 import com.raven.chart.Chart;
 import com.raven.chart.ModelChart;
 import java.awt.event.ActionListener;
