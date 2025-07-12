@@ -4,8 +4,8 @@
  */
 package com.mycompany.quanlyshopgiay.controller;
 
-import com.mycompany.quanlyshopgiayt.action.ManagerResidents;
-import com.mycompany.quanlyshopgiayt.action.ManagerResidents;
+import com.mycompany.quanlyshopgiay.action.ManagerResidents;
+import com.mycompany.quanlyshopgiay.action.ManagerResidents;
 import com.mycompany.quanlyshopgiay.entity.Residents;
 import com.mycompany.quanlyshopgiay.entity.Residents;
 import com.mycompany.quanlyshopgiay.view.LoginView;

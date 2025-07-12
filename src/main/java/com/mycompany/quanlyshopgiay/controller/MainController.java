@@ -4,7 +4,7 @@
  */
 package com.mycompany.quanlyshopgiay.controller;
 
-import com.mycompany.quanlyshopgiayt.action.ManagerSpecialPerson;
+import com.mycompany.quanlyshopgiay.action.ManagerSpecialPerson;
 import com.mycompany.quanlyshopgiay.entity.SpecialPerson;
 import com.mycompany.quanlyshopgiay.view.LoginView;
 import com.mycompany.quanlyshopgiay.view.MainView;
