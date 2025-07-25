@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DanhSachKhachHang>
+    <KhachHang>
+        <MaKH>KH027</MaKH>
+        <TenKH>Hữu Nghĩa</TenKH>
+        <SDT>0352344567</SDT>
+        <DiaChi>hanoi</DiaChi>
+        <DanhSachMuaHang>
+            <HoaDon>
+                <MaHD>HD005</MaHD>
+                <MaGiay>G003</MaGiay>
+                <SoLuong>9</SoLuong>
+                <NgayMua>2025-07-24+07:00</NgayMua>
+                <TongTien>1.000</TongTien>
+            </HoaDon>
+        </DanhSachMuaHang>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>KH028</MaKH>
+        <TenKH>Phenikaa</TenKH>
+        <SDT>0123456789</SDT>
+        <DiaChi>Yên Nghĩa</DiaChi>
+        <DanhSachMuaHang>
+            <HoaDon>
+                <MaHD>HD006</MaHD>
+                <MaGiay>G006</MaGiay>
+                <SoLuong>2</SoLuong>
+                <NgayMua>2025-07-24+07:00</NgayMua>
+                <TongTien>1.000.000</TongTien>
+            </HoaDon>
+        </DanhSachMuaHang>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>KH029</MaKH>
+        <TenKH>Nguyen Ngọc Kiên</TenKH>
+        <SDT>0984574332</SDT>
+        <DiaChi>Quốc oai</DiaChi>
+        <DanhSachMuaHang>
+            <HoaDon>
+                <MaHD>HD007</MaHD>
+                <MaGiay>G001</MaGiay>
+                <SoLuong>2</SoLuong>
+                <NgayMua>2025-07-24+07:00</NgayMua>
+                <TongTien>1.000.000</TongTien>
+            </HoaDon>
+        </DanhSachMuaHang>
+    </KhachHang>
+</DanhSachKhachHang>

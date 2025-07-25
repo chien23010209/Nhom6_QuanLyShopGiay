@@ -13,15 +13,14 @@ import javax.swing.JFrame;
  *
  * @author PC
  */
-public class QuanLyhopGiay 
+public class QuanLyShopGiay 
 {
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                LoginView view = new LoginView();
-                LoginController controller = new LoginController(view);
-                controller.showLoginView();
-            }
-        });
+    java.awt.EventQueue.invokeLater(() -> {
+        LoginView loginView = new LoginView();
+        LoginController controller = new LoginController(loginView);
+        controller.showLoginView();
+    });
     }
 }
+

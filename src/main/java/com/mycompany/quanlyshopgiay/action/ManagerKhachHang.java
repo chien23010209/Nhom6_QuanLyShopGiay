@@ -14,15 +14,14 @@ public class ManagerKhachHang {
     private static final String FILE_NAME = "dataKhachHang.xml";
     private List<KhachHang> list;
 
-    public ManagerKhachHang() {
-        list = read();
-        if (list == null) list = new ArrayList<>();
-    }
-
-    // Đọc toàn bộ dữ liệu khách hàng và hóa đơn từ file XML
     public List<KhachHang> read() {
         KhachHangXML wrapper = (KhachHangXML) FileUtils.readXMLFile(FILE_NAME, KhachHangXML.class);
         return (wrapper != null) ? wrapper.getDanhSachKhachHang() : new ArrayList<>();
+    }
+
+    public ManagerKhachHang() {
+        list = read();  // ✅ không còn lỗi gạch chân
+        if (list == null) list = new ArrayList<>();
     }
 
     // Ghi danh sách khách hàng (kèm hóa đơn) vào file XML
@@ -33,7 +32,7 @@ public class ManagerKhachHang {
     }
 
     // Tạo mã khách hàng tự động: KH001, KH002,...
-    private String generateNextCustomerID() {
+    public String generateNextCustomerID() {
         int max = 0;
         for (KhachHang kh : list) {
             try {
@@ -47,7 +46,7 @@ public class ManagerKhachHang {
     }
 
     // Tạo mã hóa đơn mới duy nhất: HD001, HD002,...
-    private String generateNextInvoiceID() {
+    public String generateNextInvoiceID() {
         int max = 0;
         for (KhachHang kh : list) {
             if (kh.getDanhSachHoaDon() != null) {
@@ -66,13 +65,17 @@ public class ManagerKhachHang {
 
     // Thêm khách hàng mới
     public void addCustomer(KhachHang kh) {
-        kh.setMaKhachHang(generateNextCustomerID());
+        if (kh.getMaKhachHang() == null || kh.getMaKhachHang().isBlank()) {
+            kh.setMaKhachHang(generateNextCustomerID());
+        }
         if (kh.getDanhSachHoaDon() == null) {
             kh.setDanhSachHoaDon(new ArrayList<>());
         }
         list.add(kh);
         write(list);
+        System.out.println("Đã thêm KH: " + kh.getMaKhachHang());
     }
+
 
     // Sửa thông tin khách hàng
     public void editCustomer(KhachHang kh) {
@@ -84,13 +87,26 @@ public class ManagerKhachHang {
             }
         }
     }
+    public void updateCustomer(KhachHang khMoi) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getMaKhachHang().equals(khMoi.getMaKhachHang())) {
+                list.set(i, khMoi);  // cập nhật toàn bộ
+                write(list);         // 🔥 GHI VÀO FILE
+                break;
+            }
+        }
+    }
 
+
+    
+    
     // Xóa khách hàng khỏi danh sách
     public boolean deleteCustomer(KhachHang kh) {
         boolean removed = list.removeIf(x -> x.getMaKhachHang().equals(kh.getMaKhachHang()));
         if (removed) write(list);
         return removed;
     }
+    
 
     // Thêm hóa đơn cho 1 khách hàng theo mã KH
     public boolean addInvoiceToCustomer(String maKH, KhachHang.HoaDon hoaDon) {
@@ -154,4 +170,9 @@ public class ManagerKhachHang {
         }
         return null;
     }
+        // Nạp lại dữ liệu từ file XML vào list
+    public void reload() {
+        list = read();
+    }
+
 }

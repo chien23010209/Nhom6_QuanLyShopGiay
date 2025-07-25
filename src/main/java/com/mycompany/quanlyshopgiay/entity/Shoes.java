@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -13,23 +14,50 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Giay")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Giay implements Serializable {
+public class Shoes implements Serializable {
     private static final long serialVersionUID = 1L;
+    @XmlElement(name = "MaGiay")
+    private String maGiay;
 
-    private String maGiay;        // Mã giày (ví dụ: G001)
-    private String tenGiay;       // Tên sản phẩm (VD: Nike Air Force 1)
-    private String hang;          // Thương hiệu (VD: Nike, Adidas,...)
-    private int size;             // Size giày
-    private String mauSac;        // Màu sắc giày (VD: Trắng, Đỏ/Đen,...)
-    private double gia;           // Giá bán
-    private Date ngayNhap;        // Ngày nhập hàng
-    private int soLuongTon;       // Số lượng tồn kho
-    private String hinhAnh;       // Đường dẫn hình ảnh (tương đối)
+    @XmlElement(name = "TenGiay")
+    private String tenGiay;
 
-    public Giay() {
+    @XmlElement(name = "Hang")
+    private String hang;
+
+    @XmlElement(name = "Size")
+    private int size;
+
+    @XmlElement(name = "MauSac")
+    private String mauSac;
+
+    @XmlElement(name = "Gia")
+    private double gia;
+
+    @XmlElement(name = "NgayNhap")
+    private Date ngayNhap;
+
+    @XmlElement(name = "SoLuongTon")
+    private int soLuongTon;
+
+    @XmlElement(name = "HinhAnh")
+    private String hinhAnh;
+    
+
+//    private String maGiay;        // Mã giày (ví dụ: G001)
+//    private String tenGiay;       // Tên sản phẩm (VD: Nike Air Force 1)
+//    private String hang;          // Thương hiệu (VD: Nike, Adidas,...)
+//    private int size;             // Size giày
+//    private String mauSac;        // Màu sắc giày (VD: Trắng, Đỏ/Đen,...)
+//    private double gia;           // Giá bán
+//    private Date ngayNhap;        // Ngày nhập hàng
+//    private int soLuongTon;       // Số lượng tồn kho
+//    private String hinhAnh;       // Đường dẫn hình ảnh (tương đối)
+
+    public Shoes() {
     }
 
-    public Giay(String maGiay, String tenGiay, String hang, int size, String mauSac,
+    public Shoes(String maGiay, String tenGiay, String hang, int size, String mauSac,
                 double gia, Date ngayNhap, int soLuongTon, String hinhAnh) {
         this.maGiay = maGiay;
         this.tenGiay = tenGiay;

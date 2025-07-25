@@ -13,24 +13,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "DanhSachGiay")  // Phần tử gốc trong XML
 @XmlAccessorType(XmlAccessType.FIELD)   // Tự động ánh xạ theo field
-public class GiayXML {
+public class ShoesXML {
 
     @XmlElement(name = "Giay")           // Mỗi phần tử con trong danh sách
-    private List<Giay> danhSachGiay;
+    private List<Shoes> danhSachGiay;
 
-    public List<Giay> getDanhSachGiay() {
+    public List<Shoes> getDanhSachGiay() {
         return danhSachGiay;
     }
 
-    public void setDanhSachGiay(List<Giay> danhSachGiay) {
+    public void setDanhSachGiay(List<Shoes> danhSachGiay) {
         this.danhSachGiay = danhSachGiay;
     }
 
-    public Object getGiayList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setGiayList(List<Giay> list) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 }

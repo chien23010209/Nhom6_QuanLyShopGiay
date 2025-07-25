@@ -4,56 +4,63 @@
  */
 package com.mycompany.quanlyshopgiay.controller;
 
-import com.mycompany.quanlyshopgiay.action.ManagerSpecialPerson;
-import com.mycompany.quanlyshopgiay.entity.SpecialPerson;
+import com.mycompany.quanlyshopgiay.action.ManagerKhachHang;
+import com.mycompany.quanlyshopgiay.action.ManagerShoes;
+import com.mycompany.quanlyshopgiay.entity.Shoes;
 import com.mycompany.quanlyshopgiay.view.LoginView;
 import com.mycompany.quanlyshopgiay.view.MainView;
-import com.mycompany.quanlyshopgiay.view.ManagerView;
-import com.mycompany.quanlyshopgiay.view.CustomerView;
+import com.mycompany.quanlyshopgiay.view.ShoesView;
+import com.mycompany.quanlyshopgiay.view.TransactionView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author PC
- */
-public class MainController 
-{
-    private LoginView loginView;
-    private ManagerView managerView;
-    private CustomerView residentView;
+public class MainController {
     private MainView mainView;
-    
-    public MainController(MainView view)
-    {
+
+    public MainController(MainView view) {
         this.mainView = view;
-        view.addChooseSpecialPersonListener(new ChooseSpecialPersonListener());
-        view.addChooseResidentsListener(new ChooseResidentListener());
+
+        // Gắn sự kiện
+        view.addCustomerListener(new CustomerButtonListener());
+        view.addShoesListener(new ShoesButtonListener());
+        view.addLogoutListener(new LogoutButtonListener());
     }
-    public void showMainView() 
-    {
+
+    public void showMainView() {
         mainView.setVisible(true);
     }
-    class ChooseSpecialPersonListener implements ActionListener 
-    {
-        public void actionPerformed(ActionEvent e) 
-        {
-            managerView = new ManagerView();
-            SpecialPersonController managerController = new SpecialPersonController(managerView);
-            managerController.showManagerView();
+
+   class CustomerButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ManagerShoes managerShoes = new ManagerShoes();
+            ManagerKhachHang managerKhachHang = new ManagerKhachHang();
+
+            TransactionView view = new TransactionView(managerShoes, managerKhachHang); // gọi constructor có đủ tham số
+            new KhachHangController(view); // gắn controller để xử lý logic
+
+            view.setVisible(true);
+            mainView.setVisible(false); // ẩn MainView nếu muốn
+        }
+    }
+
+
+
+    class ShoesButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            ShoesView view = new ShoesView();
+            new ShoesController(view);
+            view.setVisible(true);
             mainView.setVisible(false);
         }
     }
-    
-    class ChooseResidentListener implements ActionListener 
-    {
-        public void actionPerformed(ActionEvent e) 
-        {
-            residentView = new CustomerView();
-            ResidentController residentController = new ResidentController(residentView);
-            residentController.showManagerView();
-            mainView.setVisible(false);
+
+    class LogoutButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(mainView, "Đăng xuất thành công!");
+            mainView.dispose();
         }
     }
 }

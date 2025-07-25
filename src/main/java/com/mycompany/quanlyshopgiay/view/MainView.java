@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.quanlyshopgiay.view;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
+
+import javax.swing.JButton;
 
 /**
  *
- * @author PC
+ * @author nguyennghia
  */
 public class MainView extends javax.swing.JFrame {
 
@@ -18,6 +18,31 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
     }
+    public JButton getBtnCustomer() {
+        return btnCustomer;
+    }
+
+    public JButton getBtnShoes() {
+        return btnShoes;
+    }
+
+    public JButton getBtnLogout() {
+        return btnLogout;
+    }
+    
+    // Gắn sự kiện từ controller
+    public void addCustomerListener(java.awt.event.ActionListener listener) {
+        btnCustomer.addActionListener(listener);
+    } 
+
+    public void addShoesListener(java.awt.event.ActionListener listener) {
+        btnShoes.addActionListener(listener);
+    }
+
+    public void addLogoutListener(java.awt.event.ActionListener listener) {
+        btnLogout.addActionListener(listener);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,99 +53,109 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        btnChooseSpecialPerson = new javax.swing.JButton();
-        btnChooseResidents = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("<html>Quản lý tình hình dân cư<br> ");
+        jPanel1 = new javax.swing.JPanel();
+        btnShoes = new javax.swing.JButton();
+        btnCustomer = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(960, 679));
 
-        btnChooseSpecialPerson.setBackground(new java.awt.Color(0, 0, 102));
-        btnChooseSpecialPerson.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        btnChooseSpecialPerson.setForeground(new java.awt.Color(255, 255, 255));
-        btnChooseSpecialPerson.setText("<html><div style='text-align: center;'>Quản Lý Khách Hàng<br></div>");
-        btnChooseSpecialPerson.setToolTipText("");
-        btnChooseSpecialPerson.setBorder(null);
-        btnChooseSpecialPerson.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnChooseSpecialPerson.setOpaque(true);
-        btnChooseSpecialPerson.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnShoes.setBackground(new java.awt.Color(204, 204, 204));
+        btnShoes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnShoes.setText("Quản lý sản phẩm");
+        btnShoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChooseSpecialPersonActionPerformed(evt);
+                btnShoesActionPerformed(evt);
             }
         });
 
-        btnChooseResidents.setBackground(new java.awt.Color(0, 0, 102));
-        btnChooseResidents.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        btnChooseResidents.setForeground(new java.awt.Color(255, 255, 255));
-        btnChooseResidents.setText("<html><div style='text-align: center;'>Quản Lý Kho <br></div>");
-        btnChooseResidents.setToolTipText("");
-        btnChooseResidents.setBorder(null);
-        btnChooseResidents.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnChooseResidents.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnChooseResidents.addActionListener(new java.awt.event.ActionListener() {
+        btnCustomer.setBackground(new java.awt.Color(204, 204, 204));
+        btnCustomer.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnCustomer.setText("Quản lý bán hàng");
+        btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChooseResidentsActionPerformed(evt);
+                btnCustomerActionPerformed(evt);
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("<html>Quản Lý Shop Giày <br> ");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLogout.setBackground(new java.awt.Color(204, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnLogout.setText("Đăng xuất");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setIcon(new ImageIcon("src/main/java/com/mycompany/quanlydoituongdacbiet/view/Lovepik_com-500330964-blue-blazed-background.jpg"));
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTitle.setBackground(new java.awt.Color(204, 255, 255));
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTitle.setText("Hệ thống quản lý shop giày ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(243, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnShoes, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(203, 203, 203))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(427, 427, 427))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblTitle)
+                        .addGap(291, 291, 291))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(lblTitle)
+                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnShoes, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(326, 326, 326))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btnChooseResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(btnChooseSpecialPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 1056, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnChooseResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChooseSpecialPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnChooseSpecialPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseSpecialPersonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnChooseSpecialPersonActionPerformed
+    private void btnShoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShoesActionPerformed
+    }//GEN-LAST:event_btnShoesActionPerformed
 
-    private void btnChooseResidentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseResidentsActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnChooseResidentsActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,21 +191,12 @@ public class MainView extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void addChooseSpecialPersonListener(ActionListener listener){
-        btnChooseSpecialPerson.addActionListener(listener);
-    }
-    
-    public void addChooseResidentsListener(ActionListener listener){
-        btnChooseResidents.addActionListener(listener);
-    }
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnChooseResidents;
-    private javax.swing.JButton btnChooseSpecialPerson;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton btnCustomer;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnShoes;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

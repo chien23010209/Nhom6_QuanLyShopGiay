@@ -1,11 +1,15 @@
 package com.mycompany.quanlyshopgiay.entity;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "KhachHang")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class KhachHang implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -26,8 +30,7 @@ public class KhachHang implements Serializable {
     @XmlElement(name = "HoaDon")
     private List<HoaDon> danhSachHoaDon;
 
-    public KhachHang() {
-    }
+    public KhachHang() {}
 
     public KhachHang(String maKH, String ten, String sdt, String diaChi) {
         this.maKhachHang = maKH;
@@ -37,7 +40,6 @@ public class KhachHang implements Serializable {
         this.danhSachHoaDon = new ArrayList<>();
     }
 
-    // === Getter / Setter ===
     public String getMaKhachHang() {
         return maKhachHang;
     }
@@ -81,19 +83,10 @@ public class KhachHang implements Serializable {
         this.danhSachHoaDon = danhSachHoaDon;
     }
 
-    // ================================
-    // Các HÀM QUẢN LÝ HÓA ĐƠN bên trong Khách Hàng
-    // ================================
-
-    // Thêm hóa đơn
     public void themHoaDon(HoaDon hoaDon) {
-        if (danhSachHoaDon == null) {
-            danhSachHoaDon = new ArrayList<>();
-        }
-        danhSachHoaDon.add(hoaDon);
+        getDanhSachHoaDon().add(hoaDon);
     }
 
-    // Sửa hóa đơn theo mã
     public boolean suaHoaDon(String maHD, HoaDon hoaDonMoi) {
         for (int i = 0; i < danhSachHoaDon.size(); i++) {
             if (danhSachHoaDon.get(i).getMaHD().equals(maHD)) {
@@ -104,12 +97,10 @@ public class KhachHang implements Serializable {
         return false;
     }
 
-    // Xóa hóa đơn theo mã
     public boolean xoaHoaDon(String maHD) {
         return danhSachHoaDon.removeIf(hd -> hd.getMaHD().equals(maHD));
     }
 
-    // Tìm hóa đơn theo mã
     public HoaDon timHoaDon(String maHD) {
         for (HoaDon hd : danhSachHoaDon) {
             if (hd.getMaHD().equals(maHD)) {
@@ -119,9 +110,10 @@ public class KhachHang implements Serializable {
         return null;
     }
 
-    // ================================
-    // LỚP NỘI: HÓA ĐƠN
-    // ================================
+    public String getMaKH() {
+        return maKhachHang;
+    }
+
     @XmlAccessorType(XmlAccessType.FIELD)
     public static class HoaDon implements Serializable {
         private static final long serialVersionUID = 1L;
@@ -132,19 +124,20 @@ public class KhachHang implements Serializable {
         @XmlElement(name = "MaGiay")
         private String maGiay;
 
-        @XmlElement(name = "NgayMua")
-        private String ngayMua;
-
         @XmlElement(name = "SoLuong")
-        private String soLuong;
+        private int soLuong;
+        @XmlSchemaType(name = "date")
+        
+        @XmlElement(name = "NgayMua")
+        private Date ngayMua;
+
 
         @XmlElement(name = "TongTien")
         private String tongTien;
 
-        public HoaDon() {
-        }
+        public HoaDon() {}
 
-        public HoaDon(String maHD, String maGiay, String ngayMua, String soLuong, String tongTien) {
+        public HoaDon(String maHD, String maGiay, Date ngayMua, int soLuong, String tongTien) {
             this.maHD = maHD;
             this.maGiay = maGiay;
             this.ngayMua = ngayMua;
@@ -168,21 +161,21 @@ public class KhachHang implements Serializable {
             this.maGiay = maGiay;
         }
 
-        public String getNgayMua() {
-            return ngayMua;
-        }
-
-        public void setNgayMua(String ngayMua) {
-            this.ngayMua = ngayMua;
-        }
-
-        public String getSoLuong() {
+        public int getSoLuong() {
             return soLuong;
         }
 
-        public void setSoLuong(String soLuong) {
+        public void setSoLuong(int soLuong) {
             this.soLuong = soLuong;
         }
+
+        public Date getNgayMua() {
+            return ngayMua;
+        }
+        public void setNgayMua(Date ngayMua) {
+            this.ngayMua = ngayMua;
+        }
+
 
         public String getTongTien() {
             return tongTien;
@@ -191,5 +184,23 @@ public class KhachHang implements Serializable {
         public void setTongTien(String tongTien) {
             this.tongTien = tongTien;
         }
+
+        public long getTongTienAsLong() {
+            try {
+                return Long.parseLong(tongTien.replaceAll("[^\\d]", "")); // xóa mọi ký tự không phải số
+            } catch (NumberFormatException e) {
+                return 0;
+            }
+        }
+
+
+        public String getFormattedTongTien() {
+            try {
+                return NumberFormat.getInstance(new Locale("vi", "VN")).format(getTongTienAsLong());
+            } catch (Exception e) {
+                return tongTien;
+            }
+        }
+
     }
 }

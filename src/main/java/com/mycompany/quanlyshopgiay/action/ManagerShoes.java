@@ -1,62 +1,63 @@
 package com.mycompany.quanlyshopgiay.action;
 
-import com.mycompany.quanlyshopgiay.entity.Giay;
-import com.mycompany.quanlyshopgiay.entity.GiayXML;
+import com.mycompany.quanlyshopgiay.entity.Shoes;
+import com.mycompany.quanlyshopgiay.entity.ShoesXML;
 import com.mycompany.quanlyshopgiay.utils.FileUtils;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-/**
- * Lớp quản lý giày, thao tác với file XML "dataShoes.xml"
- */
 public class ManagerShoes {
     private static final String FILE_NAME = "dataShoes.xml";
-    private List<Giay> listGiay;
+    private List<Shoes> listGiay;
 
     public ManagerShoes() {
-        listGiay = (List<Giay>) readListGiay();
+        listGiay = readListGiay();
         if (listGiay == null) {
             listGiay = new ArrayList<>();
         }
     }
 
-    // Đọc danh sách giày từ file XML
-    public Object readListGiay() {
-        GiayXML wrapper = (GiayXML) FileUtils.readXMLFile(FILE_NAME, GiayXML.class);
-        return (wrapper != null && wrapper.getGiayList() != null) ? wrapper.getGiayList() : new ArrayList<>();
+    public List<Shoes> getList() {
+        return listGiay;
     }
 
-    // Ghi danh sách giày vào file XML
-    public void writeListGiay(List<Giay> list) {
-        GiayXML wrapper = new GiayXML();
-        wrapper.setGiayList(list);
+    private List<Shoes> readListGiay() {
+        ShoesXML wrapper = (ShoesXML) FileUtils.readXMLFile(FILE_NAME, ShoesXML.class);
+        return (wrapper != null && wrapper.getDanhSachGiay() != null)
+                ? wrapper.getDanhSachGiay()
+                : new ArrayList<>();
+    }
+
+    public void writeListGiay(List<Shoes> list) {
+        ShoesXML wrapper = new ShoesXML();
+        wrapper.setDanhSachGiay(list);
         FileUtils.writeXMLtoFile(FILE_NAME, wrapper);
     }
 
-    // Sinh mã giày tự động theo định dạng G001, G002,...
-    private String generateNextID() {
-        int max = 0;
-        for (Giay g : listGiay) {
-            try {
-                String number = g.getMaGiay().replaceAll("[^0-9]", "");
-                max = Math.max(max, Integer.parseInt(number));
-            } catch (NumberFormatException e) {
-                // Bỏ qua nếu mã giày sai định dạng
-            }
+    public String generateNextID() {
+        int index = 1;
+        while (true) {
+            String candidate = String.format("G%03d", index);
+            boolean exists = listGiay.stream().anyMatch(g -> g.getMaGiay().equals(candidate));
+            if (!exists) return candidate;  // Nếu chưa tồn tại thì dùng
+            index++;
         }
-        return String.format("G%03d", max + 1);
     }
 
-    // Thêm giày mới vào danh sách
-    public void add(Giay g) {
-        g.setMaGiay(generateNextID());
+
+    public void add(Shoes g) {
+        if (isDuplicateID(g.getMaGiay())) {
+            throw new IllegalArgumentException("❌ Mã giày đã tồn tại: " + g.getMaGiay());
+        }
         listGiay.add(g);
         writeListGiay(listGiay);
     }
 
-    // Sửa thông tin giày theo mã
-    public void edit(Giay updated) {
+
+    public void edit(Shoes updated) {
         for (int i = 0; i < listGiay.size(); i++) {
             if (listGiay.get(i).getMaGiay().equals(updated.getMaGiay())) {
                 listGiay.set(i, updated);
@@ -66,8 +67,7 @@ public class ManagerShoes {
         }
     }
 
-    // Xóa giày khỏi danh sách
-    public boolean delete(Giay g) {
+    public boolean delete(Shoes g) {
         boolean removed = listGiay.removeIf(item -> item.getMaGiay().equals(g.getMaGiay()));
         if (removed) {
             writeListGiay(listGiay);
@@ -75,18 +75,64 @@ public class ManagerShoes {
         return removed;
     }
 
-    // Lấy toàn bộ danh sách giày
-    public List<Giay> getListGiay() {
+    public List<Shoes> getListGiay() {
         return listGiay;
     }
 
-    // Tìm giày theo mã
-    public Giay findByID(String maGiay) {
-        for (Giay g : listGiay) {
+    public Shoes findByID(String maGiay) {
+        for (Shoes g : listGiay) {
             if (g.getMaGiay().equals(maGiay)) {
                 return g;
             }
         }
         return null;
+    }
+
+    public boolean isDuplicateID(String maGiay) {
+        return listGiay.stream().anyMatch(g -> g.getMaGiay().equalsIgnoreCase(maGiay));
+    }
+
+    public String getNextID() {
+        return generateNextID();
+    }
+
+    public void update(Shoes g) {
+        edit(g);
+    }
+
+    public void delete(String id) {
+        listGiay.removeIf(g -> g.getMaGiay().equals(id));
+        writeListGiay(listGiay);
+    }
+
+    public List<Shoes> search(String keyword, Double minPrice, Double maxPrice) {
+        String lowerKeyword = (keyword != null) ? keyword.toLowerCase() : "";
+
+        return listGiay.stream()
+            .filter(g -> 
+                (lowerKeyword.isEmpty()
+                    || g.getTenGiay().toLowerCase().contains(lowerKeyword)
+                    || g.getHang().toLowerCase().contains(lowerKeyword)
+                    || g.getMauSac().toLowerCase().contains(lowerKeyword)
+                    || g.getMaGiay().toLowerCase().contains(lowerKeyword)
+                )
+            )
+            .filter(g -> minPrice == null || g.getGia() >= minPrice)
+            .filter(g -> maxPrice == null || g.getGia() <= maxPrice)
+            .collect(Collectors.toList());
+    }
+
+
+    public void sortByPriceDescending() {
+        listGiay.sort((g1, g2) -> Double.compare(g2.getGia(), g1.getGia()));
+        writeListGiay(listGiay);
+    }
+
+    public double getMaxPrice() {
+        return listGiay.stream().mapToDouble(Shoes::getGia).max().orElse(0);
+    }
+
+    public double getMinPrice() {
+        return listGiay.stream().mapToDouble(Shoes::getGia).min().orElse(0);
     }
 }

@@ -33,29 +33,29 @@ public class KhoiTaoDataKhachHang {
                 System.out.println("🆕 Tạo mới file XML: " + xmlFile.getAbsolutePath());
             }
 
-            addCustomerWithInvoices(doc, root, "KH001", "Nguyễn Văn Siu", "0355556666", "Hà Nội",
+            addCustomerWithInvoices(doc, root, "KH01", "Nguyễn Văn Siu", "0355556666", "Hà Nội",
                     new String[][]{
-                            {"HD001", "G001", "2025-07-03", "2", "5000000"}
+                            {"HD01", "G001", "2025-07-03", "2", "5000000"}
                     });
 
-            addCustomerWithInvoices(doc, root, "KH002", "Trần Thị Hoan", "0988889999", "TP.HCM",
+            addCustomerWithInvoices(doc, root, "KH02", "Trần Thị Hoan", "0988889999", "TP.HCM",
                     new String[][]{
-                            {"HD002", "G002", "2025-07-03", "1", "1900000"}
+                            {"HD02", "G002", "2025-07-03", "1", "1900000"}
                     });
 
-            addCustomerWithInvoices(doc, root, "KH003", "Lê Văn Dân", "0911223344", "Đà Nẵng",
+            addCustomerWithInvoices(doc, root, "KH03", "Lê Văn Dân", "0911223344", "Đà Nẵng",
                     new String[][]{
-                            {"HD003", "G005", "2025-07-24", "3", "57000000"}
+                            {"HD03", "G005", "2025-07-24", "3", "57000000"}
                     });
 
-            addCustomerWithInvoices(doc, root, "KH004", "Lê Khắc Chân", "0916437328", "Lạng Sơn",
+            addCustomerWithInvoices(doc, root, "KH04", "Lê Khắc Chân", "0916437328", "Lạng Sơn",
                     new String[][]{
-                            {"HD004", "G012", "2025-08-25", "4", "7608000"}
+                            {"HD04", "G012", "2025-08-25", "4", "7608000"}
                     });
 
-            addCustomerWithInvoices(doc, root, "KH005", "Tạ Khánh Chi", "0911342233", "Hưng Yên",
+            addCustomerWithInvoices(doc, root, "KH05", "Tạ Khánh Chi", "0911342233", "Hưng Yên",
                     new String[][]{
-                            {"HD005", "G015", "2025-07-15", "2", "38000000"}
+                            {"HD05", "G015", "2025-07-15", "2", "38000000"}
                     });
 
             saveToFile(doc, xmlFile);

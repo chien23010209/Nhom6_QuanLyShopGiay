@@ -4,26 +4,23 @@
  */
 package com.mycompany.quanlyshopgiay.controller;
 
-import com.mycompany.quanlyshopgiayt.action.CheckLogin;
+import com.mycompany.quanlyshopgiay.action.CheckLogin;
 import com.mycompany.quanlyshopgiay.entity.User;
 import com.mycompany.quanlyshopgiay.view.LoginView;
 import com.mycompany.quanlyshopgiay.view.MainView;
-import com.mycompany.quanlyshopgiay.view.ManagerView;
+import com.mycompany.quanlyshopgiay.view.ShoesView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 
-/**
- *
- * @author PC
- */
+
 public class LoginController 
 {
     private CheckLogin checkLogin;
     private LoginView loginView;
-    private ManagerView managerView;
+    private ShoesView shoesView;
     private MainView mainView;
     
     public LoginController(LoginView view) 

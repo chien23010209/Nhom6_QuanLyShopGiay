@@ -1,116 +1,180 @@
-# 👟🥿 Quản Lý Shop Giày - README
+👟🥿 PHẦN MỀM QUẢN LÝ SHOP GIÀY
+📋 1. Giới thiệu phần mềm
+Quản Lý Shop Giày là phần mềm quản lý bán hàng chuyên dụng cho cửa hàng giày dép, được phát triển bằng Java trên môi trường NetBeans IDE, sử dụng XML làm hệ thống lưu trữ dữ liệu.
 
----
+Phần mềm hỗ trợ cửa hàng trong các công việc:
 
-## 📋 1. Mô tả phần mềm
+Quản lý thông tin sản phẩm giày dép
 
-Phần mềm **Quản lý Shop Giày** là ứng dụng hỗ trợ quản lý hoạt động kinh doanh của cửa hàng giày dép. Phần mềm được phát triển trên nền tảng **Java** sử dụng **NetBeans IDE** và lưu trữ dữ liệu bằng **file XML**. 
+Quản lý khách hàng và hóa đơn mua hàng
 
-Ứng dụng cho phép người dùng thực hiện các chức năng cơ bản như:
-- 🆕 Nhập hàng (thêm mới hoặc cập nhật sản phẩm giày dép)
-- 🛒 Bán hàng (ghi nhận và quản lý đơn hàng)
-- 📊 Thống kê doanh thu, số lượng tồn kho theo thời gian
-- 🔍 Tìm kiếm sản phẩm theo mã, tên, size kèm hiển thị hình ảnh
+Thống kê doanh thu, hàng tồn
 
-Giao diện đơn giản, thân thiện giúp nhân viên và quản lý dễ dàng sử dụng, nâng cao hiệu quả bán hàng.
+Tìm kiếm thông minh theo nhiều tiêu chí
 
----
+Giao diện thân thiện, dễ sử dụng, hỗ trợ cả nhân viên bán hàng và quản lý
 
-## ⚙️ 2. Chức năng chính
+⚙️ 2. Các chức năng chính
+🔐 2.1 Đăng nhập hệ thống
+Trước khi truy cập hệ thống, người dùng bắt buộc phải đăng nhập.
 
-### 🔐 2.1 Đăng nhập hệ thống
-- Người dùng cần đăng nhập với tài khoản hợp lệ mới có thể truy cập các chức năng.
-- Tài khoản và mật khẩu được lưu trong file `users.xml`.
-- Hệ thống có tài khoản mặc định:
-  - 👤 Tài khoản: `admin`
-  - 🔑 Mật khẩu: `123456`
+Thông tin đăng nhập được lưu trong file users.xml.
 
-### 🏷️ 2.2 Nhập hàng
-- Thêm mới hoặc cập nhật sản phẩm giày dép với các thông tin:
-  - 🆔 Mã sản phẩm, tên sản phẩm, size, màu sắc
-  - 💰 Giá nhập, số lượng tồn kho
-  - 🖼️ Đường dẫn hình ảnh (ảnh giày được lưu trong thư mục `images/`)
-- Dữ liệu được ghi trực tiếp vào file `products.xml`.
+Mỗi tài khoản gồm tên đăng nhập và mật khẩu.
 
-### 🛍️ 2.3 Bán hàng
-- Lựa chọn sản phẩm và số lượng để tạo đơn hàng bán.
-- Tính tổng tiền và cập nhật tồn kho sau mỗi giao dịch.
-- Giao dịch bán hàng được lưu lại trong `sales.xml`.
+Phân quyền người dùng bao gồm:
 
-### 📈 2.4 Thống kê
-- Thống kê tổng số sản phẩm đã bán, số lượng tồn kho còn lại.
-- Thống kê doanh thu theo ngày, tuần hoặc tháng.
-- Hiển thị kết quả thống kê theo bảng biểu dễ quan sát.
+Admin: toàn quyền quản lý (thêm/xóa tài khoản, sản phẩm, khách hàng)
 
-### 🔎 2.5 Tìm kiếm sản phẩm
-- Tìm kiếm sản phẩm theo:
-  - 🆔 Mã sản phẩm
-  - 🏷️ Tên sản phẩm
-  - 📏 Size giày
-- Kết quả tìm kiếm trả về đầy đủ thông tin sản phẩm cùng hình ảnh minh họa.
+Nhân viên: tạo hóa đơn, thêm khách hàng
 
----
+✅ Tài khoản mặc định:
 
-## 🔐 3. Thông tin tài khoản đăng nhập mặc định
+👤 Tài khoản: admin
 
-| 👤 Tài khoản | 🔑 Mật khẩu |
-|-------------|------------|
-| admin       | 123456     |
+🔑 Mật khẩu: admin
 
-- Các tài khoản được lưu trong file `users.xml`.
-- Người dùng có thể mở và chỉnh sửa file XML này để thêm hoặc thay đổi tài khoản.
+Người dùng có thể tự tạo thêm tài khoản mới hoặc chỉnh sửa file users.xml để thay đổi thông tin người dùng.
 
----
+👟 2.2 Quản lý sản phẩm (dữ liệu lưu trong dataShoes.xml)
+Phần mềm cho phép quản lý toàn bộ danh sách sản phẩm giày dép trong cửa hàng.
 
-## 🚀 4. Hướng dẫn cài đặt và chạy chương trình
+Thêm mới sản phẩm:
 
-### 🛠️ 4.1 Yêu cầu môi trường
-- Cài đặt **Java JDK** phiên bản 23.
-- Cài đặt **NetBeans IDE** (phiên bản 21 trở lên khuyến nghị).
-- Đảm bảo có các file dữ liệu XML chuẩn:
-  - `users.xml` (lưu tài khoản người dùng)
-  - `products.xml` (lưu thông tin sản phẩm)
-  - `sales.xml` (lưu thông tin giao dịch bán hàng)
-- Thư mục `images/` chứa ảnh sản phẩm.
+Mã sản phẩm tự động tăng (G001, G002, ...)
 
-### ▶️ 4.2 Các bước chạy
-1. Mở **NetBeans IDE**.
-2. Chọn **File > Open Project**, rồi chọn thư mục dự án chứa mã nguồn.
-3. Kiểm tra thư mục `data/` có đủ các file XML và thư mục `images/` có ảnh sản phẩm.
-4. Nhấn **Run** (hoặc phím tắt `F6`) để chạy chương trình.
-5. Giao diện đăng nhập xuất hiện, nhập tài khoản và mật khẩu đã được cung cấp.
-6. Sau khi đăng nhập thành công, giao diện chính sẽ hiển thị các chức năng quản lý.
+Nhập thông tin: tên, size, màu sắc, giá bán, số lượng tồn, hình ảnh
 
----
+Chỉnh sửa sản phẩm:
 
+Cập nhật thông tin sản phẩm khi có thay đổi về giá, tồn kho,...
 
+Xóa sản phẩm:
 
+Xóa sản phẩm không còn kinh doanh
 
-## 📂 5. Cấu trúc thư mục dự án
+Hiển thị danh sách sản phẩm:
 
-ShopGiay/
-|
-+-- src/
-| +-- gui/ # Các lớp giao diện người dùng
-| +-- model/ # Lớp xử lý dữ liệu và thao tác với XML
-| +-- utils/ # Các tiện ích hỗ trợ (đọc, ghi XML, xử lý ảnh)
-| +-- Main.java # Lớp chính khởi chạy chương trình
-|
-+-- data/
-| +-- products.xml # Lưu trữ thông tin sản phẩm giày dép
-| +-- users.xml # Lưu trữ tài khoản đăng nhập
-| +-- sales.xml # Lưu trữ lịch sử bán hàng
-|
-+-- images/ # Thư mục chứa hình ảnh sản phẩm
-|
-+-- README.md # File hướng dẫn sử dụng
+Giao diện bảng rõ ràng, có ảnh minh họa sản phẩm
 
+Lưu trữ dữ liệu:
 
+Tất cả dữ liệu sản phẩm được lưu trong file dataShoes.xml
 
-## 👨‍💻 NHÓM THỰC HIỆN
+Thông tin chi tiết cho mỗi sản phẩm gồm:
 
-- **Nhóm 6**
-- **Thành viên**:
--**Tạ Công Chiến	23010209**
--**Phạm Bá Hiếu 	23010216**
--**Nguyễn Hữu Nghĩa 	21012081**
+🆔 Mã sản phẩm (tự động, ví dụ: G001)
+
+🏷️ Tên sản phẩm
+
+📏 Size giày
+
+🎨 Màu sắc
+
+💰 Giá bán (hiển thị với dấu phân cách hàng nghìn)
+
+📦 Số lượng tồn kho
+
+🖼️ Ảnh sản phẩm (ảnh nằm trong thư mục images/)
+
+👤 2.3 Quản lý khách hàng và hóa đơn (dữ liệu lưu trong dataKhachHang.xml)
+🧑‍💼 Quản lý khách hàng
+Thêm khách hàng mới: mã tự động tăng (KH001, KH002, ...)
+
+Cập nhật thông tin khách hàng: họ tên, địa chỉ, số điện thoại
+
+Tìm kiếm khách hàng theo tên hoặc mã
+
+Hiển thị danh sách khách hàng kèm số hóa đơn đã mua
+
+Thông tin khách hàng gồm:
+
+🆔 Mã khách hàng
+
+🧾 Họ và tên
+
+☎️ Số điện thoại
+
+📍 Địa chỉ
+
+🧾 Quản lý hóa đơn
+Tạo hóa đơn mới cho khách hàng:
+
+Lựa chọn sản phẩm, nhập số lượng
+
+Tự động tính tổng tiền 
+
+Chọn ngày mua hàng từ lịch
+
+Mã hóa đơn tự tăng (HD001, HD002, …)
+
+Lưu hóa đơn:
+
+Mỗi hóa đơn được lưu trong danh sách hóa đơn của khách hàng tương ứng
+
+Hiển thị chi tiết hóa đơn:
+
+Danh sách sản phẩm đã mua, số lượng, đơn giá, tổng tiền
+
+Tìm kiếm hóa đơn theo mã, ngày, khách hàng
+
+🔍 2.4 Tìm kiếm sản phẩm nâng cao
+Phần mềm hỗ trợ chức năng tìm kiếm thông minh, linh hoạt theo nhiều tiêu chí:
+
+🆔 Mã sản phẩm (tìm chính xác)
+
+🏷️ Tên sản phẩm (tìm gần đúng – không cần nhập đầy đủ)
+
+💵 Giá bán (tìm theo khoảng giá)
+
+👉 Kết quả hiển thị theo bảng kèm ảnh sản phẩm, giúp dễ nhận diện.
+
+📊 2.5 Thống kê và báo cáo
+Chức năng thống kê giúp quản lý nắm được tình hình hoạt động kinh doanh:
+Hóa đơn cao nhất 
+hóa đơn thấp nhất 
+Tổng doanh thu (hiển thị theo định dạng tiền tệ có dấu phẩy)
+Sản phẩm tồn kho còn lại
+👉 Giao diện thống kê hiển thị dạng bảng trực quan, dễ theo dõi.
+
+🚀 3. Hướng dẫn cài đặt và sử dụng
+🛠️ 3.1 Yêu cầu môi trường
+✅ Java JDK 17 hoặc cao hơn (khuyến nghị: JDK 23)
+
+✅ NetBeans IDE phiên bản 21 hoặc mới hơn
+
+✅ Các file dữ liệu cần thiết:
+
+dataShoes.xml – chứa danh sách sản phẩm
+
+dataKhachHang.xml – chứa danh sách khách hàng và hóa đơn
+
+✅ Thư mục images/ – chứa ảnh sản phẩm giày
+
+▶️ 3.2 Cách chạy chương trình
+Mở NetBeans IDE
+
+Chọn File > Open Project và chọn thư mục chứa dự án
+
+Đảm bảo thư mục data/ có các file dataShoes.xml, dataKhachHang.xml, users.xml
+
+Đảm bảo thư mục images/ có ảnh sản phẩm (tên ảnh phải đúng với đường dẫn lưu trong XML)
+
+Nhấn Run hoặc nhấn phím F6 để chạy phần mềm
+
+Tại giao diện đăng nhập, nhập:
+
+👤 Tài khoản: admin
+
+🔑 Mật khẩu: admin
+
+Sau khi đăng nhập thành công, giao diện chính sẽ hiển thị đầy đủ chức năng quản lý
+
+👨‍💻 4. Nhóm phát triển
+Nhóm 6 – Dự án : Quản Lý Shop Giày
+
+👤 Tạ Công Chiến – 23010209
+
+👤 Phạm Bá Hiếu – 23010216
+
+👤 Nguyễn Hữu Nghĩa – 21012081
