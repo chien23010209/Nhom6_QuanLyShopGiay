@@ -154,13 +154,15 @@ dataKhachHang.xml – chứa danh sách khách hàng và hóa đơn
 
 ##### ▶️ 3.2 Cách chạy chương trình Mở NetBeans IDE
 
-Chọn File > Open Project và chọn thư mục chứa dự án
+- Chọn File > Open Project và chọn thư mục chứa dự án
 
 Đảm bảo thư mục data/ có các file dataShoes.xml, dataKhachHang.xml, users.xml
 
 Đảm bảo thư mục images/ có ảnh sản phẩm (tên ảnh phải đúng với đường dẫn lưu trong XML)
 
 Nhấn Run hoặc nhấn phím F6 để chạy phần mềm
+- Mở thư mục đã đóng gói( boDongGoi)
+  > chạy file quanlyshopgiay.jar để chạy phần mềm
 
 Tại giao diện đăng nhập, nhập:
 
@@ -178,4 +180,4 @@ Sau khi đăng nhập thành công, giao diện chính sẽ hiển thị đầy 
 
 👤 Nguyễn Hữu Nghĩa – 21012081
 
->>>>>>> 1999882 (hoàn thành)
+
