@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 👟🥿 PHẦN MỀM QUẢN LÝ SHOP GIÀY
 📋 1. Giới thiệu phần mềm
 Quản Lý Shop Giày là phần mềm quản lý bán hàng chuyên dụng cho cửa hàng giày dép, được phát triển bằng Java trên môi trường NetBeans IDE, sử dụng XML làm hệ thống lưu trữ dữ liệu.
