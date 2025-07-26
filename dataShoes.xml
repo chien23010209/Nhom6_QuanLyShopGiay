@@ -42,7 +42,11 @@
         <Gia>1000000.0</Gia>
         <NgayNhap>2025-02-02T00:00:00+07:00</NgayNhap>
         <SoLuongTon>500</SoLuongTon>
+<<<<<<< HEAD
         <HinhAnh>images/adidas.webp</HinhAnh>
+=======
+        <HinhAnh>images\joden.jpg</HinhAnh>
+>>>>>>> 1999882 (hoàn thành)
     </Giay>
     <Giay>
         <MaGiay>G005</MaGiay>

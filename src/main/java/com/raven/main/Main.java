@@ -4,16 +4,13 @@
  * and open the template in the editor.
  */
 package com.raven.main;
-
 import com.raven.chart.ModelChart;
 import java.awt.Color;
-
 /**
  *
  * @author RAVEN
  */
 public class Main extends javax.swing.JFrame {
-
     /**
      * Creates new form Main
      */
